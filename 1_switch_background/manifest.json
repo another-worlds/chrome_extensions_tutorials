@@ -1,0 +1,21 @@
+{
+  "name": "Getting started example",
+  "description": "My first chrome extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "./js/background.js"
+  },
+  "action": {
+    "default_popup": "./html/popup.html",
+    "default_icon": {
+      "16": "./images/get_started16.png",
+      "128": "./images/get_started128.png"
+    }
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "icons": {
+    "16": "./images/get_started16.png",
+    "128": "./images/get_started128.png"
+  }
+}
