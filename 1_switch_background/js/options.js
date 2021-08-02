@@ -1,13 +1,13 @@
 let page = document.getElementById("buttonDiv");
 let selectedClassName  = "current";
-const presetButtonColors = ["#ff0000", "#00ff00", "#0000ff", "#000000"];
+const presetButtonColors = ["#ff0000", "#00ff00", "#0000ff", "#aaaaaa"];
 
 // Reacts to a button click and sets background color to chosen one
 function onButtonClick(event) {
 
   // Remove styling  from the prev selected color
   let current = event.target.parentElement.querySelector(
-    '.${selectedClassName}'
+    `.${selectedClassName}`
   );
   if (current && current !== event.target) {
     current.classList.remove(selectedClassName);
@@ -34,14 +34,14 @@ function constructOptions(buttonColors) {
       button.style.background = buttonColor;
 
       // Mark selected color
-      if (buttonColor === currentColor) {
+      if (buttonColor == currentColor) {
+        console.log('we have a match')
         button.classList.add(selectedClassName)
       }
 
       // And register listener for button click
       button.addEventListener("click", onButtonClick);
       page.appendChild(button);
-
     }
   });
 }
